@@ -74,12 +74,6 @@ pytest -v
 - Uses a separate test database
 - Production database is not affected
 
-DEPLOYMENT NOTES
-----------------
-- Backend: Render / Railway / AWS
-- Frontend: Vercel / Netlify
-- Update CORS allowed origins after deployment
-- SQLite can be replaced with PostgreSQL in production
 
 AUTHOR
 ------
