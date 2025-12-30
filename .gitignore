@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+virtualenv/
+
+# Node
+node_modules/
+
+# Database
+todo.db
+todo_test.db
+
+# OS
+.DS_Store

@@ -1,0 +1,118 @@
+API_DOCUMENTATION.txt
+
+ToDo API Documentation
+======================
+
+BASE URL
+--------
+http://127.0.0.1:8000
+
+AUTHENTICATION
+--------------
+No authentication is implemented.
+All endpoints are publicly accessible.
+
+DATA MODEL
+----------
+Task Object:
+{
+  "id": 1,
+  "title": "Buy groceries",
+  "description": "Milk and bread",
+  "due_date": "2025-12-31",
+  "status": "pending"
+}
+
+ENDPOINTS
+---------
+
+1. CREATE TASK
+POST /tasks
+
+Request:
+{
+  "title": "Buy groceries",
+  "description": "Milk and bread",
+  "due_date": "2025-12-31"
+}
+
+Response:
+{
+  "id": 1,
+  "title": "Buy groceries",
+  "description": "Milk and bread",
+  "due_date": "2025-12-31",
+  "status": "pending"
+}
+
+Errors:
+- 422 Validation Error
+- 500 Server Error
+
+--------------------------------
+
+2. GET ALL TASKS
+GET /tasks
+
+Response:
+[
+  {
+    "id": 1,
+    "title": "Buy groceries",
+    "description": null,
+    "due_date": null,
+    "status": "pending"
+  }
+]
+
+--------------------------------
+
+3. GET TASK BY ID
+GET /tasks/{task_id}
+
+Response:
+{
+  "id": 1,
+  "title": "Buy groceries",
+  "description": null,
+  "due_date": null,
+  "status": "pending"
+}
+
+Error:
+- 404 Task not found
+
+--------------------------------
+
+4. UPDATE TASK
+PUT /tasks/{task_id}
+
+Request:
+{
+  "status": "completed"
+}
+
+Response:
+{
+  "id": 1,
+  "title": "Buy groceries",
+  "description": null,
+  "due_date": null,
+  "status": "completed"
+}
+
+Error:
+- 404 Task not found or empty payload
+
+--------------------------------
+
+5. DELETE TASK
+DELETE /tasks/{task_id}
+
+Response:
+{
+  "message": "Task deleted successfully"
+}
+
+Error:
+- 404 Task not found
